@@ -119,4 +119,11 @@ export class HeroService {
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
+  deleteAllHeroes(): void {
+    this.getHeroes().subscribe(heroes => {
+      heroes.forEach(hero => {
+        this.deleteHero(hero.id).subscribe();
+      });
+    });
+  }
 }

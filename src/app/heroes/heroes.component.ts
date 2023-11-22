@@ -36,4 +36,9 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
+  deleteAllHeroes():void{
+    this.heroService.deleteAllHeroes();
+    this.heroes=[];
+  }
+
 }
